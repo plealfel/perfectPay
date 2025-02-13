@@ -24,13 +24,13 @@ const createPixPayment = (req, res) => __awaiter(void 0, void 0, void 0, functio
     catch (error) {
         if (error instanceof Error) {
             res.status(500).json({
-                message: "Erro ao processar o pagamento",
+                message: "Erro ao processar a cobrança",
                 error: error.message,
             });
         }
         else {
             res.status(500).json({
-                message: "Erro desconhecido ao processar o pagamento",
+                message: "Erro desconhecido a cobrança",
             });
         }
     }
@@ -45,13 +45,13 @@ const createCreditCardPayment = (req, res) => __awaiter(void 0, void 0, void 0, 
     catch (error) {
         if (error instanceof Error) {
             res.status(500).json({
-                message: "Erro ao processar o pagamento",
+                message: "Erro ao processar a cobrança",
                 error: error.message,
             });
         }
         else {
             res.status(500).json({
-                message: "Erro desconhecido ao processar o pagamento",
+                message: "Erro desconhecido ao processar a cobrança",
             });
         }
     }
@@ -66,13 +66,13 @@ const createBoletoPayment = (req, res) => __awaiter(void 0, void 0, void 0, func
     catch (error) {
         if (error instanceof Error) {
             res.status(500).json({
-                message: "Erro ao processar o pagamento",
+                message: "Erro ao processar a cobrança",
                 error: error.message,
             });
         }
         else {
             res.status(500).json({
-                message: "Erro desconhecido ao processar o pagamento",
+                message: "Erro desconhecido ao processar a cobrança",
             });
         }
     }
