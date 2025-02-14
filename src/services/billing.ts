@@ -46,7 +46,7 @@ class BillingService {
       status: createBilling.status,
       bankslipLink: billingInfo.bankSlip?.bankSlipUrl || null,
       bankslipCode: billingInfo.bankSlip?.barCode || null,
-      pixKey: billingInfo.pix?.payload  || null
+      pixKey: null
     };
 
     await BillingRepository.createBilling(newBilling);
