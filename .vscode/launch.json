@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program with nodemon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/index.ts",
+            "runtimeExecutable": "nodemon",
+            "args": [
+                "--exec", "ts-node", "--", "src/index.ts"
+            ],
+            "restart": true,
+            "console": "integratedTerminal",
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }
+    ]
+}
