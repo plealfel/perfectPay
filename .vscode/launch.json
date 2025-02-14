@@ -9,16 +9,17 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/index.ts",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",  
-            "runtimeArgs": [
-                "--exec",
-                "ts-node"  
+            "runtimeExecutable": "nodemon",
+            "args": [
+                "--exec", "ts-node", "--", "src/index.ts"
             ],
+            "restart": true,
+            "console": "integratedTerminal",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/build/**/*.js"
             ],
             "env": {
-                "NODE_ENV": "development"  
+                "NODE_ENV": "development"
             }
         }
     ]

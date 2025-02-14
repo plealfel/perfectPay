@@ -22,17 +22,10 @@ const createPixPayment = (req, res) => __awaiter(void 0, void 0, void 0, functio
         res.status(200).json(paymentResponse);
     }
     catch (error) {
-        if (error instanceof Error) {
-            res.status(500).json({
-                message: "Erro ao processar a cobrança",
-                error: error.message,
-            });
-        }
-        else {
-            res.status(500).json({
-                message: "Erro desconhecido a cobrança",
-            });
-        }
+        res.status(500).json({
+            message: "Erro ao processar a cobrança",
+            error,
+        });
     }
 });
 exports.createPixPayment = createPixPayment;
@@ -43,17 +36,10 @@ const createCreditCardPayment = (req, res) => __awaiter(void 0, void 0, void 0, 
         res.status(200).json(paymentResponse);
     }
     catch (error) {
-        if (error instanceof Error) {
-            res.status(500).json({
-                message: "Erro ao processar a cobrança",
-                error: error.message,
-            });
-        }
-        else {
-            res.status(500).json({
-                message: "Erro desconhecido ao processar a cobrança",
-            });
-        }
+        res.status(500).json({
+            message: "Erro ao processar a cobrança",
+            error,
+        });
     }
 });
 exports.createCreditCardPayment = createCreditCardPayment;
@@ -64,17 +50,10 @@ const createBoletoPayment = (req, res) => __awaiter(void 0, void 0, void 0, func
         res.status(200).json(paymentResponse);
     }
     catch (error) {
-        if (error instanceof Error) {
-            res.status(500).json({
-                message: "Erro ao processar a cobrança",
-                error: error.message,
-            });
-        }
-        else {
-            res.status(500).json({
-                message: "Erro desconhecido ao processar a cobrança",
-            });
-        }
+        res.status(500).json({
+            message: "Erro ao processar a cobrança",
+            error
+        });
     }
 });
 exports.createBoletoPayment = createBoletoPayment;

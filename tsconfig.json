@@ -11,6 +11,8 @@
     "paths": {
       "*": ["src/*"]
     },
-    "types": ["jest"]
+    "types": ["jest"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }

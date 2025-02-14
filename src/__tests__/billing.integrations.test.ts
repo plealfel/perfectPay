@@ -21,11 +21,13 @@ describe("AsaasApi", () => {
   };
 
   beforeEach(() => {
+    // Limpa todos os mocks antes de cada teste
     jest.clearAllMocks();
   });
 
   test("Deve criar uma cobrança corretamente", async () => {
-    mockedAxios.post.mockResolvedValue({ data: mockResponse });
+    // Garantindo que o post seja mockado corretamente
+    mockedAxios.post = jest.fn().mockResolvedValue({ data: mockResponse });
 
     const result = await AsaasApi.createBilling("PIX", mockBillingData);
 
@@ -47,7 +49,8 @@ describe("AsaasApi", () => {
   });
 
   test("Deve buscar informações de uma cobrança corretamente", async () => {
-    mockedAxios.get.mockResolvedValue({ data: mockResponse });
+    // Garantindo que o get seja mockado corretamente
+    mockedAxios.get = jest.fn().mockResolvedValue({ data: mockResponse });
 
     const result = await AsaasApi.getBillingInfo("123456");
 
@@ -64,13 +67,13 @@ describe("AsaasApi", () => {
   });
 
   test("Deve lançar erro caso a criação de cobrança falhe", async () => {
-    mockedAxios.post.mockRejectedValue(new Error("Erro na API"));
+    mockedAxios.post = jest.fn().mockRejectedValue(new Error("Erro na API"));
 
     await expect(AsaasApi.createBilling("PIX", mockBillingData)).rejects.toThrow("Erro na API");
   });
 
   test("Deve lançar erro caso a busca de informações de cobrança falhe", async () => {
-    mockedAxios.get.mockRejectedValue(new Error("Erro na API"));
+    mockedAxios.get = jest.fn().mockRejectedValue(new Error("Erro na API"));
 
     await expect(AsaasApi.getBillingInfo("123456")).rejects.toThrow("Erro na API");
   });
